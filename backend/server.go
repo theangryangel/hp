@@ -82,7 +82,7 @@ func migrate(db *sql.DB) {
 
 
 func main() {
-  db := initDb("storage.db")
+  db := initDb("./data/storage.db")
 
 	e := echo.New()
 	h := handlers.Handler{DB: db}

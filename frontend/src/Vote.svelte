@@ -15,7 +15,7 @@
 						startVelocity: 30,
 						spread: 360,
 					})
-		}
+			}
 
 		function downvote(e, id) {
 				fetch(`/users/${id}/reward?quantity=-1`, {method: "POST"}).then(r => r.json()).then(points => {
@@ -25,9 +25,11 @@
 				const mp3Idx = Math.floor(Math.random() * mp3.sound.length)
 				const oggIdx = Math.floor(Math.random() * ogg.sound.length)
 
-				const sound = new Howl({ src: [
-						mp3.prefix + mp3.sound[mp3Idx],
-						ogg.prefix + ogg.sound[oggIdx]
+				
+
+				const sound = new Howl({ html5: true, src: [
+						window.createObjectURL(mp3.prefix + mp3.sound[mp3Idx]),
+						window.createObjectURL(ogg.prefix + ogg.sound[mp3Idx]),
 					]});
 
 				sound.play();
