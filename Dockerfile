@@ -2,7 +2,7 @@
 FROM node:latest as frontend
 WORKDIR /build
 COPY . .
-RUN cd frontend && npm install npm run build
+RUN cd frontend && npm install && npm run build
 
 # Build Backend
 FROM golang:latest as backend
