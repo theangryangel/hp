@@ -28,8 +28,8 @@
 				
 
 				const sound = new Howl({ html5: true, src: [
-						window.createObjectURL(mp3.prefix + mp3.sound[mp3Idx]),
-						window.createObjectURL(ogg.prefix + ogg.sound[mp3Idx]),
+						mp3.prefix + mp3.sound[mp3Idx],
+						ogg.prefix + ogg.sound[mp3Idx],
 					]});
 
 				sound.play();
